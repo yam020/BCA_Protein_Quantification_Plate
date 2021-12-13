@@ -15,7 +15,7 @@ The script will produce three outcomes:
 There is a [sample output file](https://github.com/yam020/BCA_Protein_Quantification_Plate/tree/main/sample%20output) for reference. 
 
 ## When running the script 
-Please install these three packages: **ggplot2**, **dplyr**, **tidyr** before running the code.  
+Please install these three packages: **ggplot2**, **dplyr**, **tidyr**, **stringr** before running the code.  
 Please set the working direcotry before running the code.  
 Output will be saved in the choosen working directory.  
 Please click **"source"** when running the code.  
