@@ -6,6 +6,7 @@ message("Please set working direcotry before you run the code")
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 # choose a file 
 fname <- file.choose()
@@ -114,6 +115,9 @@ for (x in pos){
   cleandata <- cleandata[-grep(x, cleandata$aname),]
 }
 
+# keep the order in the x-axis 
+cleandata$aname <- factor(cleandata$aname, levels = cleandata$aname)
+
 # plot the fraction 
 ggplot(cleandata, aes(aname, V1, group = 1)) + 
   geom_point() + 
@@ -122,6 +126,6 @@ ggplot(cleandata, aes(aname, V1, group = 1)) +
   ylab("Protein (ug)") +
   theme(axis.text.y=element_blank(),
         axis.ticks.y=element_blank(),
-        axis.text.x = element_text(angle=90, hjust=1, size = 6))
+        axis.text.x = element_text(angle=90, hjust=1, size = 5))
 # save the plot 
 ggsave("fraction.pdf")
