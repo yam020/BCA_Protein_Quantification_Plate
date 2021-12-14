@@ -119,13 +119,12 @@ for (x in pos){
 cleandata$aname <- factor(cleandata$aname, levels = cleandata$aname)
 
 # plot the fraction 
-ggplot(cleandata, aes(aname, V1, group = 1)) + 
+ggplot(cleandata, aes(aname, as.numeric(V1), group = 1)) + 
   geom_point() + 
   geom_line()+
   xlab("Fraction") + 
   ylab("Protein (ug)") +
-  theme(axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.text.x = element_text(angle=90, hjust=1, size = 5))
+  theme(axis.ticks.y =element_blank(),
+        axis.text.x = element_text(angle=90, hjust=1, size =5))
 # save the plot 
 ggsave("fraction.pdf")
